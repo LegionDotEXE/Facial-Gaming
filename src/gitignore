@@ -1,0 +1,19 @@
+# dataset directories (wherever they appear)
+**/kaggle/
+**/train/
+**/test/
+**/transfer_data/
+
+# model files (large binaries)
+*.keras
+*.h5
+*.npy
+
+# python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# OS junk
+.DS_Store
+Thumbs.db
