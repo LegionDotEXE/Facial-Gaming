@@ -29,9 +29,8 @@ class BasicModel(Model):
     def _compile_model(self):
         # Your code goes here
         # you have to compile the keras model, similar to the example in the writeup
-        #pass
         self.model.compile(
             optimizer=RMSprop(learning_rate=0.001),
             loss='categorical_crossentropy',
-            metrics=['accuracy']
+            metrics=['accuracy'],
         )
