@@ -1,10 +1,10 @@
-# dataset directories (wherever they appear)
+# dataset directories
 **/kaggle/
 **/train/
 **/test/
 **/transfer_data/
 
-# model files (large binaries)
+# model files
 *.keras
 *.h5
 *.npy
