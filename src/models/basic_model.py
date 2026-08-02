@@ -25,7 +25,7 @@ class BasicModel(Model):
 
             layers.Flatten(),
             layers.Dense(64, activation='relu'),
-            layers.Dropout(0.3),
+            layers.Dropout(0.5),    # increased dropout from 0.3 --> 0.5
             layers.Dense(categories_count, activation='softmax'),
         ])
 
@@ -33,7 +33,7 @@ class BasicModel(Model):
         # Your code goes here
         # you have to compile the keras model, similar to the example in the writeup
         self.model.compile(
-            optimizer=RMSprop(learning_rate=0.001),
+            optimizer=RMSprop(learning_rate=0.0005),   # decreased the learning rate from 0.001 --> 0.0005
             loss='categorical_crossentropy',
             metrics=['accuracy'],
         )

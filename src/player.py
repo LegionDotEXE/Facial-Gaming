@@ -107,8 +107,26 @@ class UserWebcamPlayer:
         # The classification value should be 0, 1, or 2 for neutral, happy or surprise respectively
 
         # return an integer (0, 1 or 2), otherwise the code will throw an error
-        return 1
-        pass
+
+        #changes the camera image from grayscale --> full RGB color
+        img_rgb = cv2.cvtColor(img, cv2.COLOR_GRAY2RGB)
+
+        #shrink/stretch the image to the required size
+        img_resized = cv2.resize(img_rgb, image_size)
+
+        #scales pixel numbers to a 0-1 decimal range
+        img_normalized = img_resized / 255.0
+
+        final_image = np.expand_dims(img_normalized, axis=0)
+
+        model = models.load_model('results/basic_model_20_epochs_timestamp_1785630672.keras')
+
+        predictions = model.predict(final_image)
+
+        #finds the list index with highest sore
+        emotion_index = np.argmax(predictions[0])
+        return int(emotion_index)
+        
     
     def get_move(self, board_state):
         row, col = None, None
