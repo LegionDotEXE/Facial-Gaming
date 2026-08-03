@@ -12,7 +12,6 @@ validation_split = 0.2
 BOARD_SIZE = 3
 
 # Section 8: Transfer Learning
-# Point these at your chosen 2-class Kaggle dataset, organized the same
 # way as train/test above (one subfolder per class, e.g. transfer_train/dog, transfer_train/cat)
 transfer_categories = ['dogs', 'cats']
 transfer_train_directory = 'transfer_train_final'
